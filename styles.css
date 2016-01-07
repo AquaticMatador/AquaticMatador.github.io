@@ -1,0 +1,25 @@
+body {
+	background-color: #AA4E39;
+}
+
+h1{
+	color: #FFBAAA;
+	font-family: Arial;
+	text-align: center;
+	background-color: #551000;
+	width: 300px;
+	border-radius: 25px;
+	border-color: #552700;
+}
+h3{
+	color: #FFBAAA;
+	font-family: Arial;
+	border-radius: 25px;
+	border-top: 1px;
+	border-bottom: 1px;
+}
+p{
+	color: #022636;
+	font-family: Arial;
+	background-color: #802A15;
+}
