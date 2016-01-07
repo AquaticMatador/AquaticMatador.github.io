@@ -1,0 +1,61 @@
+body{
+	background-color: #F7FFF6;
+}
+h1{
+	color: #F7FFF6;
+	padding: 5px;
+}
+h4{
+	text-align: center;
+	color: #BCEBCB; 
+}
+p{
+	font-size: 10px;
+	padding: 5px;
+}
+h3{
+	font-weight: bold;
+}
+h2
+{
+	text-decoration: underline;
+}
+.container-fluid
+{
+	border-style: solid;
+	background-color: #8491A3
+}
+.container
+{
+	background-color: #87D68D;
+}
+.col-sm-3
+{
+	border-style: solid;
+	background-color: #8491A3;
+}
+
+.imageWrapRight .img-responsive
+{
+	float:right;
+	padding: 20px;
+}
+.imageWrapLeft .img-responsive
+{
+	float:left;
+	padding: 20px;
+}
+.container .contact
+{
+	background-color: #93B48B
+}
+.imageWrapRight 
+{
+	float:right;
+	padding: 20px;
+}
+.imageWrapLeft 
+{
+	float:left;
+	padding: 20px;
+}
