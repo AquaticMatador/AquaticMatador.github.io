@@ -36,7 +36,7 @@ function createTable(event){
 	var totalPaid = 0;
 	var totalInterestPaid = 0;
 	//table spans 5 columns, <th> are declared here
-	var monthTable = "<table class='table table-striped table-bordered table-responsive'><th>Month</th><th>Monthly Payment</th><th>Principle Paid</th><th>Interest Paid</th><th>Amount Remaining</th>"
+	var monthTable = "<div class='text-center'><h1>Schedule</h1></div><table class='table table-striped table-responsive'><th>Month</th><th>Monthly Payment</th><th>Principle Paid</th><th>Interest Paid</th><th>Amount Remaining</th>"
 	for (var x = 0; x < numberOfMonths; x++){
 		interestAmmount = interestRate * principal;
 		principal = principal - (monthlyPayment - interestAmmount);
@@ -63,7 +63,7 @@ function createTable(event){
 	//Calculating percentage paid for summary table
 	var percentagePaid = (totalInterestPaid / totalPaid) * 100;
 	//This makes the summary data table. Due to javascript, line breaks are not allowed so its every row and column on one line
-	var table = "<table class='table table-striped table-bordered table-responsive'><tr><td>Loan Ammount</td><td>" + principalInitial + "</td></tr>" + "<tr><td>Monthly Interest Rate</td><td>" + (interestRate * 100).toFixed(2) + "%</td></tr>" +"<tr><td>Monthly Payment</td><td>" + monthlyPayment.toFixed(2) + "</td></tr>" +"<tr><td>Total Ammount Paid</td><td>" + totalPaid.toFixed(2) + "</td></tr>" +"<tr><td>Total Interest Paid</td><td>" + totalInterestPaid.toFixed(2) + "</td></tr>" +"<tr><td>Percentage Interest Paid</td><td>" + percentagePaid.toFixed(2) + "%</td></tr></table>";
+	var table = "<div class='text-center'><h1>Summary</h1><table class='table table-striped table-responsive'><tr><td>Loan Ammount</td><td>" + principalInitial + "</td></tr>" + "<tr><td>Monthly Interest Rate</td><td>" + (interestRate * 100).toFixed(2) + "%</td></tr>" +"<tr><td>Monthly Payment</td><td>" + monthlyPayment.toFixed(2) + "</td></tr>" +"<tr><td>Total Ammount Paid</td><td>" + totalPaid.toFixed(2) + "</td></tr>" +"<tr><td>Total Interest Paid</td><td>" + totalInterestPaid.toFixed(2) + "</td></tr>" +"<tr><td>Percentage Interest Paid</td><td>" + percentagePaid.toFixed(2) + "%</td></tr></table>";
 	
 	//outputting sumary table to page
 	document.querySelector("#data").innerHTML = table;
@@ -76,7 +76,7 @@ function createTable(event){
 	var arrRange = range.split("-");
 	var start = Number(arrRange[0]);
 	var end = Number(arrRange[1]);
-	//document.getElementById(arrRange[0]).innerHTML += "<div style='display: none;'>";
+	
 	if(start === 1){
 		for(var x = end + 1; x <= numberOfMonths; x++){
 			strX = x.toString();

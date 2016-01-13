@@ -19,7 +19,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
-		<title>blarg</title>
+		<title>Mortgage Calculator</title>
 	</head>
 
 	<body>
@@ -28,7 +28,7 @@
 			<h1>Mortgage Calculator</h1>
 		</div>
 	
-
+		<br />
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
@@ -41,29 +41,34 @@
 			});
 
 		</script>
-		<div class="container id="inputdiv">
+		<div class="container" id="inputdiv">
 			<div class="input-group">
-				<span class="input-group-addon">Principal</span>
+				<label for="principal" >Principal</label>
 				<input type="text" class="form-control" id="principal" placeholder="e.g. 150000" aria-describedby="basic-addon1">
 			</div>
-			<div class="input-group">
-				<span class="input-group-addon">Ammount of Time (years)</span>
-				<input type="text" class="form-control" id="years" placeholder="e.g 30" aria-describedby="basic-addon1">
+			<div class="input-group">						
+				<label for="years">Ammount of Years</label> 
+					<select class="form-control" id="years"> 
+						<option value="15">15 Years</option> 
+						<option value="20">20 Years</option> 
+						<option value="30" selected="selected">30 Years</option> 
+					</select> 					
 			</div>
+
 			<div class="input-group">
-				<span class="input-group-addon">Annual Interest Rate</span>
+				<label for="interestRate" >Annual Interest Rate</label>
 				<input type="text" class="form-control" id="interestRate" placeholder="e.g 4.5" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
-				<span class="input-group-addon">Range To Display</span>
+				<label for="displayRange" >Range To Display</label>
 				<input type="text" class="form-control" id="displayRange" placeholder="e.g 1-360" aria-describedby="basic-addon1">
 			</div>
 				<div>
 					<button type="button" id="submit" class="btn btn-default">
-					Go!
+					Go! <span class="glyphicon glyphicon-ok"></span>
 					</button>
 					<button type="button" id="reset" class="btn btn-default">
-					Reset Fields
+					Reset Fields <span class="glyphicon glyphicon-refresh"></span>
 					</button>
 				</div>
 			</div>
