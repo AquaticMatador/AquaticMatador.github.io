@@ -42,18 +42,19 @@
 		<div class="form-group">						
 			<label for="medium">Medium</label> 
 			<select class="form-control" id="medium" onchange="mediumSelect()"> 
-				<option value="null" selected="selected"><i>Choose a Medium</i></option>
-				<option value="movie" class="disabled">Movie</option> 
-				<option value="tv">TV Series</option>
-				<option value="game">Game</option>
-				<option value="book">Book</option> 
+				<option value="null" selected="selected" id="def"><i>Choose a Medium</i></option>
+				<option value="movie" class="disabled" id="movie">Movie</option> 
+				<option value="tv" id="tv">TV Series</option>
+				<option value="game" id="game">Game</option>
+				<option value="book" id="book">Book</option> 
 			</select> 					
 		</div>
 	</div>
 	<div class="container">
 		<div class="form-group">						
 			<label for="status">Status:</label> 
-			<select class="form-control" id="status"> 
+			<select class="form-control" id="status" onchange="statusSelect()"> 
+				<option value="null" selected="selected"><i>Choose a Status</i></option>
 				<option value="started">Started</option> 
 				<option value="completed">Completed</option>
 				<option value="finished">Finished</option>

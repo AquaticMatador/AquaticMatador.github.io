@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var user = firebaseRef.getAuth();
 	var userRef = firebaseRef.child(user.uid);
 	var userID = user.uid;
+  	/*instead make the drop down thing work by giving a hidden tab and make a button make it unhidden*/
 	var movieRef = userRef.child("movie")
 	movieRef.orderByChild(userID).on("child_added", function(snapshot, previousNeighborId) {
 		var data = snapshot.val();
