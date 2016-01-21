@@ -18,10 +18,8 @@ function mediumSelect(){
 
 var submitButton = document.querySelector("#submit");
 
-
 //Checks for click
 submitButton.addEventListener("click", insertData, false);
-
 function insertData(){
 
 	var firebaseRef = new Firebase("https://tsundoku.firebaseio.com/");
@@ -37,21 +35,30 @@ function insertData(){
 	if (userMedium === "movie"){
 		var userLength = document.querySelector("#length").value;
 		var item = {title: userTitle, status: userStatus, length: userLength, medium: userMedium};
-		console.log(item.title);
 		userRef.child("movie/" + userTitle).set(item);
 	} else if(userMedium === "tv"){
 		var userLength = document.querySelector("#length").value;
 		var userNumEpisodes = document.querySelector("#numEpisodes").value;
-		userRef.child("tv").set({item: {title: userTitle, status: userStatus, length: userLength, episodes: userNumEpisodes, medium: userMedium}})
+		var item = {title: userTitle, status: userStatus, length: userLength, numOfEpisodes: userNumEpisodes, medium: userMedium}
+		userRef.child("tv/" + userTitle).set(item);
 	} else if(userMedium === "game"){
-		userRef.child("game").set({item: {title: userTitle, status: userStatus, medium: userMedium}})
+		var item ={title: userTitle, status: userStatus, medium: userMedium};
+		userRef.child("game/" + userTitle).set(item);
 	} else if(userMedium === "book"){
 		var userLength = document.querySelector("#length").value;
-		userRef.child("book").set({item: {title: userTitle, status: userStatus, length: userLength, medium: userMedium}})
+		var item = {title: userTitle, status: userStatus, length: userLength, medium: userMedium};
+		userRef.child("book/" + userTitle).set(item);
 	}
 	//firebaseRef.unauth();
 }
 	//firebaseRef.push("jim");
 }
+var logoutButton = document.querySelector("#out");
+logoutButton.addEventListener("click", logOut, false);
+function logOut(){
+	firebaseRef.unauth();
+	window.location.assign("logon.html");
+}
+
 
 

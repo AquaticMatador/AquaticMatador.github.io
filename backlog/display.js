@@ -1,10 +1,38 @@
 $(document).ready(function() {
 	var firebaseRef = new Firebase("https://tsundoku.firebaseio.com/");
-	firebaseRef.orderByChild("name/lastName").on("child_added", function(snapshot, previousNeighborId) {
-		var obj = snapshot.val();
-		var table = $("#table");
-		var user = firebaseRef.getAuth();
-		var userID = user.uid;
-		table.append("<tr><td>" + userID.obj.item.title + "</td><td>" + userID.obj.item.medium + "</td><td>" + userID.obj.item.status + "</td></tr>")
+	var user = firebaseRef.getAuth();
+	var userRef = firebaseRef.child(user.uid);
+	var userID = user.uid;
+	var movieRef = userRef.child("movie")
+	movieRef.orderByChild(userID).on("child_added", function(snapshot, previousNeighborId) {
+		var data = snapshot.val();
+		var movieTable = $("#tableMovie");
+		movieTable.append("<tr><td>" + data.title + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
+		//console.log(data.title);
+	});
+	var bookRef = userRef.child("book")
+		bookRef.orderByChild(userID).on("child_added", function(snapshot, previousNeighborId) {
+		var data = snapshot.val();
+		var movieTable = $("#tableBook");
+		movieTable.append("<tr><td>" + data.title + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
+		//console.log(data.title);
+	});
+	var gameRef = userRef.child("game")
+		gameRef.orderByChild(userID).on("child_added", function(snapshot, previousNeighborId) {
+		var data = snapshot.val();
+		var movieTable = $("#tableGame");
+		movieTable.append("<tr><td>" + data.title + "</td><td>" + data.status + "</td></tr>")
+		//console.log(data.title);
+	});
+	var tvRef = userRef.child("tv")
+		tvRef.orderByChild(userID).on("child_added", function(snapshot, previousNeighborId) {
+		var data = snapshot.val();
+		var movieTable = $("#tableTv");
+		movieTable.append("<tr><td>" + data.title + "</td><td>" + data.numOfEpisodes + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
+		//console.log(data.title);
+	});
+	$("#out").click(function(){
+		firebaseRef.unauth();
+		window.location.assign("logon.html");
 	});
 });
