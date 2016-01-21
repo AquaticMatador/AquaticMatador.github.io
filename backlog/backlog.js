@@ -1,6 +1,5 @@
 function mediumSelect(){
 	var userMedium = document.querySelector("#medium").value;
-		var userStatus = document.querySelector("#status").value;
 	if (userMedium === "movie"){
 		//document.querySelector("#mediumForm").innerHTML = "";
 		document.querySelector("#mediumForm").innerHTML = "<div class='form-group'><label for='length'>Runtime: </label><input type='text' class='form-control' id='length' /></div>"
@@ -15,11 +14,7 @@ function mediumSelect(){
 		//document.querySelector("#mediumForm").innerHTML = "";
 		document.querySelector("#mediumForm").innerHTML = "<div class='form-group'><label for='length'>Total Number of Pages: </label><input type='text' class='form-control' id='length' /></div>"
 	}
-	/*
-	document.querySelector("#statusForm").innerHTML = "";
-	//document.getElementById("#" + userStatus).selected = false;
-	document.getElementById("#def").selected = true;
-	*/
+	
 	/*use dom to change the status back to default*/
 
 }
@@ -86,6 +81,7 @@ function insertData(){
 var logoutButton = document.querySelector("#out");
 logoutButton.addEventListener("click", logOut, false);
 function logOut(){
+	var firebaseRef = new Firebase("https://tsundoku.firebaseio.com/");
 	firebaseRef.unauth();
 	window.location.assign("logon.html");
 }
