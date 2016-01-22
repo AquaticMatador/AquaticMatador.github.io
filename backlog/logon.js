@@ -8,8 +8,12 @@ $(document).ready(function() {
 		}, function(error, userData) {
 		  	if (error) {
 		    console.log("Error creating user:", error);
+		    $("#success").text("");
+		    $("#fail").text("Registration Was Not Successfull, please try again");
 		  } else {
 		    console.log("Successfully created user account with uid:", userData.uid);
+		    $("#fail").text("");
+		    $("#success").text("Registration Was Successfull, please login");
 		  }
 		});
 	});
@@ -22,8 +26,9 @@ $(document).ready(function() {
 		},  function(error, authData) {
 			  if (error) {
 			    console.log("Login Failed!", error);
+			    $("#failLog").text("Login Was Not Successfull, please try again");
 			  } else {
-			    console.log("Authenticated successfully with payload:", authData);
+			    //console.log("Authenticated successfully with payload:", authData);
 			    window.location.assign("showTable.html");
 			  }
 			}, {

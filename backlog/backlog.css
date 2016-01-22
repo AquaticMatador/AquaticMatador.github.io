@@ -1,0 +1,11 @@
+.failMessage{
+	background-color: #AA3E39;
+	color: #FBFBFB;
+}
+.successMessage{
+	background-color: #5C9632;
+	color: #FBFBFB;
+}
+.container{
+	background-color: #F4F3F3;
+}
