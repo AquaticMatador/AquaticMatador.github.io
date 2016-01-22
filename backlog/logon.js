@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	var firebaseRef = new Firebase("https://tsundoku.firebaseio.com/");
+		  $("#username").val("");
+		  $("#password").val("");
+		  $("#usname").val("");
+		  $("#uspass").val("");
 	$("#submit").click(function(){
 		var name = $("#username").val();
 		var pass = $("#password").val();
@@ -15,6 +19,8 @@ $(document).ready(function() {
 		    $("#fail").text("");
 		    $("#success").text("Registration Was Successfull, please login");
 		  }
+		  $("#username").val("");
+		  $("#password").val("");
 		});
 	});
 
