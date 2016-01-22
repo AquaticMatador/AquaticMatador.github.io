@@ -22,7 +22,7 @@ $(document).ready(function() {
 			timeSpentMovie = timeSpentMovie + Number(data.length);
 		}
 		var getColor = colorGetter(data);
-		movieTable.after("<tr class='" + getColor + "'><td class='edit'>" + data.title + "</td><td>" + data.length + "</td><td>" + data.status + "  <a href='#edit' onclick='editData()'>edit</a></td></tr>")
+		movieTable.after("<tr class='" + getColor + "'><td class='edit'>" + data.title + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
 		timeSpent.text(timeSpentMovie + " minutes");
 		timeSpend.text(timeSpendMovie + " minutes");
 		//console.log(data.title);
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		var data = snapshot.val();
 		var bookTable = $("#tableBook");
 		var getColor = colorGetter(data);
-		bookTable.append("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.length + "</td><td>" + data.status + " <a href='#edit' onclick='editData()'>edit</a></td></tr>")
+		bookTable.append("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
 		//console.log(data.title);
 	});
 	var gameRef = userRef.child("game")
@@ -44,7 +44,7 @@ $(document).ready(function() {
 			timeSpentGame = timeSpentGame + Number(data.progress);
 		}
 		var getColor = colorGetter(data);
-		gameTable.after("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.status + " <a href='#edit' onclick='editData()'>edit</a></td></tr>")
+		gameTable.after("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.status + "</td></tr>")
 		timeSpent.text(timeSpentGame + " hours");
 		//console.log(data.title);
 	});
@@ -61,7 +61,7 @@ $(document).ready(function() {
 		}
 		var tvTable = $("#tableTv");
 		var getColor = colorGetter(data);
-		tvTable.after("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.numOfEpisodes + "</td><td>" + data.length + "</td><td>" + data.status + " <a href='#edit' onclick='editData()'>edit</a></td></tr>")
+		tvTable.after("<tr class='" + getColor + "'><td>" + data.title + "</td><td>" + data.progress + "</td><td>" + data.numOfEpisodes + "</td><td>" + data.length + "</td><td>" + data.status + "</td></tr>")
 		timeSpent.text(timeSpentTv + " minutes");
 		timeSpend.text(timeSpendTv + " minutes");
 		//console.log(data.title);
@@ -82,8 +82,4 @@ function colorGetter(userData){
 	} else if(userData.status === "backlogged"){
 		return "warning";
 	}
-}
-
-function editData(){
-	console.log("a");
 }
