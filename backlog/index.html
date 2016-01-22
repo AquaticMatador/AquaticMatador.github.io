@@ -24,61 +24,59 @@
 	<title>Backlog</title>
   </head>
   <body>
-	<div class="container">
-		<h1>Add Items To Backlog</h1>
-		<br />
-		<a href="showTable.html">ur table</a>
-		<button type="button" id="out" class="btn btn-default">
-			sign out <span class="glyphicon glyphicon-ok"></span>
-		</button>
-	</div>
+	<div class="col-md-6">
+	<h3>Register</h3>
 	<br />
 	<div class="container">
-		<div class="form-group">
-			<label for="title">Title:</label>
-			<input type="text" class="form-control" id="title" />
+		<div class="form-group col-md-6">
+			<label for="title">Username</label>
+			<input type="text" class="form-control" id="username" />
+		</div>
+	</div>
+	<div class="container">
+		<div class="form-group col-md-6">
+			<label for="title">Password</label>
+			<input type="password" class="form-control" id="password" />
+			<button type="button" id="submit" class="btn btn-default">
+				Go <span class="glyphicon glyphicon-ok"></span>
+			</button>
+			<div id="fail" class="failMessage"></div>
+			<div id="success" class="successMessage"></div>
 		</div>
 	</div>	
-	<div class="container">
-		<div class="form-group">						
-			<label for="medium">Medium</label> 
-			<select class="form-control" id="medium" onchange="mediumSelect()"> 
-				<option value="null" selected="selected" id="def"><i>Choose a Medium</i></option>
-				<option value="movie" class="disabled" id="movie">Movie</option> 
-				<option value="tv" id="tv">TV Series</option>
-				<option value="game" id="game">Game</option>
-				<option value="book" id="book">Book</option> 
-			</select> 					
+	</div>
+	<div class="col-md-6">
+		<h3>Login</h3>
+		<br />
+		<div class="container">
+		<div class="form-group col-md-6">
+			<label for="title">Username</label>
+			<input type="text" class="form-control" id="usname" />
 		</div>
 	</div>
 	<div class="container">
-		<div class="form-group">						
-			<label for="status">Status:</label> 
-			<select class="form-control" id="status" onchange="statusSelect()"> 
-				<option value="null" selected="selected" id="defStat"><i>Choose a Status</i></option>
-				<option value="started" id="started">Started</option> 
-				<option value="backlogged" id="backlogged">Backlogged</option>
-				<option value="finished" id="finished">Finished</option>
-				<option value="dropped" id="dropped">Dropped</option> 
-			</select> 					
-		</div>
-	</div>
-	<div class="container" id="mediumForm">
-	</div>
-	<div class="container" id="statusForm">
-	</div>
-	<div class="container">
-		<button type="button" id="submit" class="btn btn-default">
+		<div class="form-group col-md-6">
+			<label for="title">Password</label>
+			<input type="password" class="form-control" id="uspass" />
+			<button type="button" id="login" class="btn btn-default">
 			Go <span class="glyphicon glyphicon-ok"></span>
 		</button>
+		<div id="failLog" class="failMessage"></div>
+		<div id="successLog" class="successMessage"></div>
+		</div>
+	</div>	
+
 	</div>
+
+	
+	
 	<!-- firebase library -->
 	<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	<script src="backlog.js" type="text/javascript">
+	<script src="logon.js" type="text/javascript">
 	</script>
   </body>
 </html>

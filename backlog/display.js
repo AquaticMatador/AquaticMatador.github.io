@@ -68,7 +68,7 @@ $(document).ready(function() {
 	});
 	$("#out").click(function(){
 		firebaseRef.unauth();
-		window.location.assign("logon.html");
+		window.location.assign("index.html");
 	});
 });
 

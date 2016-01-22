@@ -9,3 +9,7 @@
 .container{
 	background-color: #F4F3F3;
 }
+.container .successMessage{
+	background-color: #5C9632;
+	color: #FBFBFB;
+}

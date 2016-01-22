@@ -14,7 +14,7 @@ function mediumSelect(){
 		//document.querySelector("#mediumForm").innerHTML = "";
 		document.querySelector("#mediumForm").innerHTML = "<div class='form-group'><label for='length'>Total Number of Pages: </label><input type='text' class='form-control' id='length' /></div>"
 	}
-	
+	document.querySelector("#statusForm").innerHTML = "";
 	/*use dom to change the status back to default*/
 
 }
@@ -22,6 +22,7 @@ function mediumSelect(){
 function statusSelect(){
 	var userMedium = document.querySelector("#medium").value;
 	var userStatus = document.querySelector("#status").value;
+	document.querySelector("#statusForm").innerHTML = "";
 	if(userMedium === "tv"){
 		if(userStatus === "started" || userStatus === "dropped"){
 		document.querySelector("#statusForm").innerHTML = "<div class='form-group'><label for='watched'>Number of Episodes Watched: </label><input type='text' class='form-control' id='watched' /></div>"
@@ -101,6 +102,8 @@ function insertData(){
 		var item = {title: userTitle, status: userStatus, length: userLength, progress: userProgress, medium: userMedium};
 		userRef.child("book/" + userTitle).set(item);
 	}
+	 document.querySelector("#success").innerHTML = "Item Added";
+	 document.querySelector("#success").style.display = "";
 	//firebaseRef.unauth();
 }
 	//firebaseRef.push("jim");
@@ -110,7 +113,7 @@ logoutButton.addEventListener("click", logOut, false);
 function logOut(){
 	var firebaseRef = new Firebase("https://tsundoku.firebaseio.com/");
 	firebaseRef.unauth();
-	window.location.assign("logon.html");
+	window.location.assign("index.html");
 }
 
 
