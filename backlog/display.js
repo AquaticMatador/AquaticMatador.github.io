@@ -51,6 +51,7 @@ function colorGetter(userData){
 }
 
 function editData(){
+<<<<<<< HEAD
 	//console.log("a");
 	function mediumSelect(){
 	var userMedium = document.querySelector("#medium").value;
@@ -172,3 +173,7 @@ function logOut(){
 
 }
 
+=======
+	console.log("a");
+}
+>>>>>>> parent of 0a8a1ca... Bad Edit
