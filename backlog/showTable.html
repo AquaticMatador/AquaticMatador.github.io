@@ -12,7 +12,8 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+	<!--- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="backlog.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,7 +25,7 @@
   </head>
   <body>
 	<div class="container">
-		<h1>List</h1>
+		<h1>My List</h1>
 		<br />
 		<a href="index.html">Go add stuff</a>
 		<button type="button" id="out" class="btn btn-default">
@@ -36,25 +37,34 @@
 	<div class="container">
 		<h3>Movies</h3>
 		<table id="tableMovie" class="table table-striped table-responsive table-bordered">
-		<tr><th>Title</th><th>Length</th><th>Status</th></tr>
+		<tr id="head"><th>Title</th><th>Length(Minutes)</th><th>Status</th></tr>
+		<tr><th>Total Time Spent Watching</th><th>Total Time Needed To Finish Backlog</th></tr>
+		<tr><td id="movieSpent"></td><td id="movieSpend"></td>
 		</table>
 	</div>
+	<br />
 		<div class="container">
 		<h3>Books</h3>
 		<table id="tableBook" class="table table-striped table-responsive table-bordered">
-		<tr><th>Title</th><th>pages</th><th>Status</th></tr>
+		<tr><th>Title</th><th>Pages Read</th><th>Total Pages</th><th>Status</th></tr>
 		</table>
 	</div>
+	<br />
 		<div class="container">
 		<h3>Games</h3>
-		<table id="tableGame" class="table table-striped table-responsive table-bordered">
-		<tr><th>Title</th><th>Status</th></tr>
+		<table class="table table-striped table-responsive table-bordered">
+		<tr id="tableGame"><th>Title</th><th>Time Played</th><th>Status</th></tr>
+		<tr><th>Total Time Spent Playing</th></tr>
+		<tr><td id="gameSpent"></td></tr>
 		</table>
 	</div>
+	<br />
 		<div class="container">
 		<h3>TV Series</h3>
-		<table id="tableTv" class="table table-striped table-responsive table-bordered">
-		<tr><th>Title</th><th>Number of Episodes</th><th>Length Per Episode</th><th>Status</th></tr>
+		<table class="table table-striped table-responsive table-bordered">
+		<tr id="tableTv"><th>Title</th><th>Episodes Watched</th><th>Number of Episodes</th><th>Length Per Episode</th><th>Status</th></tr>
+		<tr><th>Total Time Spent Watching</th><th>Total Time Needed To Finish Backlog</th></tr>
+		<tr><td id="tvSpent"></td><td id="tvSpend"></td>
 		</table>
 	</div>
 	<br/ >

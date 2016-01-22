@@ -12,7 +12,8 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
+	<!--- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="backlog.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,6 +40,8 @@
 			<button type="button" id="submit" class="btn btn-default">
 				Go <span class="glyphicon glyphicon-ok"></span>
 			</button>
+			<div id="fail" class="failMessage"></div>
+			<div id="success" class="successMessage"></div>
 		</div>
 	</div>	
 	</div>
@@ -58,6 +61,8 @@
 			<button type="button" id="login" class="btn btn-default">
 			Go <span class="glyphicon glyphicon-ok"></span>
 		</button>
+		<div id="failLog" class="failMessage"></div>
+		<div id="successLog" class="successMessage"></div>
 		</div>
 	</div>	
 
