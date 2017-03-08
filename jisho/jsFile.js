@@ -1,9 +1,18 @@
 
 $( document ).ready(function() {
-    $.getJSON("http://jisho.org/api/v1/search/words?keyword=%22家%22%20%23jlpt-n5", function(person){
+  //var words = request.message;
+  var jax = new XMLHttpRequest();
 
-    $.each(person, function(key, value){
-        document.write(key+": "+value+"<br />"); 
-    });
-});
+  jax.open("GET","http://jisho.org/api/v1/search/words?keyword=house");
+  jax.send();
+  jax.onreadystatechange = function() {
+    if (jax.readyState == 4) {
+      var responseText = jax.responseText;
+      var responseObject = JSON.parse(responseText);
+      var data = responseObject.data;
+      var current = data[0];
+
+      
+    }
+  };
 });
