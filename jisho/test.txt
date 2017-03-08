@@ -1,0 +1,1 @@
+﻿http://jisho.org/api/v1/search/words?keyword=%22家%22%20%23jlpt-n5
